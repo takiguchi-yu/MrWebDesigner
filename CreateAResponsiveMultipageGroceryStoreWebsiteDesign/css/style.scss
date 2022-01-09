@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
+}
+
+$green: #bac34e;
+$black: #222;
+$white: #fff;
+$light-color: #666;
+$light-bg: #f3f3f3;
+$border: .1rem solid rgba(0, 0, 0, .1);
+$box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+
+@mixin grid($val) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+  gap: 1.5rem;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 3rem 9%;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: $white;
+  box-shadow: $box-shadow;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 9%;
+
+  .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: $black;
+  }
+
+  i {
+    color: $green;
+    padding-right: .5rem;
+  }
+
+  .navbar {
+    a {
+      font-size: 1.7rem;
+      color: $light-color;
+      margin: 0 1rem;
+
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+
+  .icons div {
+    font-size: 2.5rem;
+    margin-left: 1.7rem;
+    cursor: pointer;
+    color: $light-color;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  .search-form {
+    position: absolute;
+    top: -115%;
+    right: 2rem;
+    width: 50rem;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    height: 5.5rem;
+    box-shadow: $box-shadow;
+    background: $white;
+
+    &.active {
+      top: 115%
+    }
+
+    input {
+      height: 100%;
+      width: 100%;
+      padding: 0 1.2rem;
+      font-size: 1.6rem;
+      color: $black;
+      text-transform: none;
+    }
+
+    label {
+      font-size: 2.5rem;
+      margin-right: 1.7rem;
+      cursor: pointer;
+      color: $light-color;
+
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+
+  .shopping-cart {
+    position: absolute;
+    top: 115%;
+    right: -105%;
+    background: $white;
+    border-radius: .5rem;
+    box-shadow: $box-shadow;
+    width: 35rem;
+    padding: 2rem;
+
+    &.active {
+      right: 2rem;
+      transition: .4s linear;
+    }
+
+    .box {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+
+      .fa-times {
+        position: absolute;
+        top: 50%;
+        right: 2rem;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        color: $light-color;
+        cursor: pointer;
+
+        &:hover {
+          color: $green;
+        }
+      }
+
+      img {
+        height: 10rem;
+      }
+
+      .content {
+        h3 {
+          font-size: 1.7rem;
+          padding-bottom: .5rem;
+          color: $black;
+        }
+
+        span {
+          font-size: 1.5rem;
+          color: $light-color;
+
+          &.multiplay {
+            margin: 0 .5rem;
+          }
+        }
+      }
+    }
+
+    .total {
+      color: $light-color;
+      text-align: center;
+      font-size: 2.2rem;
+
+      span {
+        color: $black;
+      }
+    }
+
+    .btn {
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .login-form {
+    position: absolute;
+    top: 115%; 
+    right: 105%;
+    background: $white;
+    border-radius: .5rem;
+    box-shadow: $box-shadow;
+    width: 35rem;
+    padding: 2rem;
+
+    &.active {
+      right: 2rem;
+      transition: .4s linear;
+    }
+
+    h3 {
+      color: $black;
+      text-transform: uppercase;
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: .7rem;
+    }
+
+    .box {
+      margin: .7rem 0;
+      border: $border;
+      padding: 1rem 1.2rem;
+      font-size: 1.5rem;
+      color: $black;
+      text-transform: none;
+      width: 100%;
+    }
+
+    .remember {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin: .7drem 0;
+
+      label {
+        font-size: 1.5rem;
+        color: $light-color;
+        cursor: pointer;
+      }
+    }
+
+    .btn {
+      margin: 1rem 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    p {
+      color: $light-color;
+      padding-top: .7rem;
+      font-size: 1.4rem;
+
+      a {
+        color: $green;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
